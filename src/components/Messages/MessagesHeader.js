@@ -38,7 +38,7 @@ class MessagesHeader extends React.Component {
             size="mini"
             icon="search"
             name="searchTerm"
-            placeholder="Search Messages"
+            placeholder="Find Stocks..."
           />
         </Header>
       </Segment>
