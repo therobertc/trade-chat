@@ -47,7 +47,7 @@ class MetaPanel extends React.Component {
     return (
       <Segment loading={!channel}>
         <Header as="h3" attached="top">
-          About # {channel && channel.name}
+          About #{channel && channel.name}
         </Header>
         <Accordion styled attached="true">
           <Accordion.Title
@@ -70,7 +70,7 @@ class MetaPanel extends React.Component {
           >
             <Icon name="dropdown" />
             <Icon name="user circle" />
-            Top Posters
+            Top Traders
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 1}>
             <List>{userPosts && this.displayTopPosters(userPosts)}</List>

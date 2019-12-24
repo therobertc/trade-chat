@@ -3,18 +3,19 @@ import { Grid } from "semantic-ui-react";
 import "./App.css";
 import { connect } from "react-redux";
 
-import ColorPanel from "./ColorPanel/ColorPanel";
+//import ColorPanel from "./ColorPanel/ColorPanel";
 import SidePanel from "./SidePanel/SidePanel";
 import Messages from "./Messages/Messages";
 import MetaPanel from "./MetaPanel/MetaPanel";
+import ChartPanel from "./ChartPanel/ChartPanel";
 
 // prettier-ignore
 const App = ({ currentUser, currentChannel, isPrivateChannel, userPosts, primaryColor, secondaryColor }) => (
   <Grid columns="equal" className="app" style={{ background: secondaryColor }}>
-    <ColorPanel
+    {/* <ColorPanel
       key={currentUser && currentUser.name}
       currentUser={currentUser}
-    />
+    /> */}
     <SidePanel
       key={currentUser && currentUser.uid}
       currentUser={currentUser}
@@ -30,12 +31,15 @@ const App = ({ currentUser, currentChannel, isPrivateChannel, userPosts, primary
       />
     </Grid.Column>
 
-    <Grid.Column width={4}>
+    <Grid.Column width={4} style={{ display: 'flex', flexDirection: 'column'}}>
       <MetaPanel
         key={currentChannel && currentChannel.name}
         userPosts={userPosts}
         currentChannel={currentChannel}
         isPrivateChannel={isPrivateChannel}
+      />
+
+      <ChartPanel
       />
     </Grid.Column>
   </Grid>
